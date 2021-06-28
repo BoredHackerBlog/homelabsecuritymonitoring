@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Configuring winlogbeat</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Configuring winlogbeat</h1><br/><h1>Configuring winlogbeat<br /></h1><br /><h2>By default, the configuration files are located in C:\ProgramData\Elastic\Beats\winlogbeat<br />Note that winlogbeat.yml does not exist. This will need to be created.<br /></h2><br /><a href=""><img src="images/28-1.png" alt="images/28-1.png" /></a><br /><br /><h2>Open a text editor as an administrator and save an empty file in C:\ProgramData\Elastic\Beats\winlogbeat named winlogbeat.yml<br /><br />Add the following to the file:<br />Be sure to change password to the correct ingest token</h2><br /><br /><code><h2>winlogbeat.event_logs:<br />  - name: Application<br />  - name: Security<br />  - name: System<br />  - name: Microsoft-windows-sysmon/operational<br />  - name: Microsoft-windows-PowerShell/Operational<br />    event_id: 4103, 4104<br />  - name: Windows PowerShell<br />    event_id: 400,600<br />  - name: Microsoft-Windows-WMI-Activity/Operational<br />    event_id: 5857,5858,5859,5860,5861<br />  - name: Microsoft-Windows-Windows Defender/Operational<br /><br />output.elasticsearch:<br />  hosts: [&quot;https://cloud.humio.com:443/api/v1/ingest/elastic-bulk&quot;]<br />  password: &quot;38e20dbe-15b1-448c-a6dc-d495f74b13c6&quot;<br />  compression_level: 5<br />  bulk_max_size: 200<br />  worker: 1</h2></code><h2><br />  <br />Configuration is based on HELK project<br />Name is name of the source where events are coming from<br />Event_id are the id’s that are collected (optional) ‘-’ sign in front of an ID can be used to not collect the event id<br /></h2></div>
+</body>
+</html>

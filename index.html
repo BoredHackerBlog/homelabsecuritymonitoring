@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>homelabsecurity.ctb</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='two-panels'>
+<div class='tree-panel'>
+<div class='tree'>
+<p>
+<strong>Index</strong></br>
+<button onclick='expandAllSubtrees()'>Expand All</button> <button onclick='collapseAllSubtrees()'>Collapse All</button>
+</p>
+<ul class='outermost'>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Homelab_Security_Monitoring.html')">Homelab Security Monitoring</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Homelab_Security_Monitoring--Introduction.html')">Introduction</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Homelab_Security_Monitoring--Lab_setup.html')">Lab setup</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Homelab_Security_Monitoring--Requirements.html')">Requirements</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Homelab_Security_Monitoring--What_will_be_collected.html')">What will be collected?</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Homelab_Security_Monitoring--Log_Data_Flow.html')">Log Data Flow</a></li>
+</ul>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Humio_introduction.html')">Humio introduction</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Humio_introduction--Humio_log_ingestion.html')">Humio log ingestion</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Humio_introduction--Humio_overview_diagram.html')">Humio overview diagram</a></li>
+</ul>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Log_forwarding_introduction.html')">Log forwarding introduction</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Log_forwarding_introduction--How_Beats_shipper_works.html')">How Beats shipper works</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Log_forwarding_introduction--Typical_Beats_config_for_Humio.html')">Typical Beats config for Humio</a></li>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Log_forwarding_introduction--Parsers.html')">Parsers</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Log_forwarding_introduction--Parsers--Accesslog_parser_example.html')">Accesslog parser example</a></li>
+</ul>
+<li class='leaf'><a href='#' onclick="changeFrame('Log_forwarding_introduction--Ingest_token_creation.html')">Ingest token creation</a></li>
+</ul>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Logging_-_Linux.html')">Logging - Linux</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Important_logs.html')">Important logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Creating_ingest_token.html')">Creating ingest token</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Installing_filebeat.html')">Installing filebeat</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Configuring_filebeat.html')">Configuring filebeat</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Shipping_to_Humio.html')">Shipping to Humio</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Linux--Viewing_the_events_in_Humio.html')">Viewing the events in Humio</a></li>
+</ul>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Logging_-_Windows.html')">Logging - Windows</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Important_logs.html')">Important logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Process_and_Powershell_logs.html')">Process and Powershell logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Sysmon.html')">Sysmon</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Creating_ingest_token.html')">Creating ingest token</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Installing_winlogbeat.html')">Installing winlogbeat</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Configuring_winlogbeat.html')">Configuring winlogbeat</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Shipping_to_Humio.html')">Shipping to Humio</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Logging_-_Windows--Viewing_the_events.html')">Viewing the events</a></li>
+</ul>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Network_Monitoring.html')">Network - Network Monitoring</a></li>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Network_-_Suricata.html')">Network - Suricata</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Suricata--Installing_Suricata.html')">Installing Suricata</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Suricata--Configuring_Suricata.html')">Configuring Suricata</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Suricata--Suricata_logs.html')">Suricata logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Suricata--Shipping_logs.html')">Shipping logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Suricata--Viewing_the_events_in_Humio.html')">Viewing the events in Humio</a></li>
+</ul>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Network_-_Zeek.html')">Network - Zeek</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Zeek--Installing_Zeek.html')">Installing Zeek</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Zeek--Configuring_Zeek.html')">Configuring Zeek</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Zeek--Zeek_logs.html')">Zeek logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Zeek--Shipping_logs.html')">Shipping logs</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Network_-_Zeek--Viewing_the_events_in_Humio.html')">Viewing the events in Humio</a></li>
+</ul>
+<li class='leaf'><a href='#' onclick="changeFrame('Logstash.html')">Logstash</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Humio_ingest_API.html')">Humio ingest API</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Humio_queries_and_dashboards.html')">Humio queries and dashboards</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Opsgenie_introduction.html')">Opsgenie introduction</a></li>
+<li><button onclick='toggleSubTree(this)'>-</button> <a href='#' onclick="changeFrame('Alerting_with_Humio_and_Opsgenie.html')">Alerting with Humio and Opsgenie</a></li><ul class='subtree'>
+<li class='leaf'><a href='#' onclick="changeFrame('Alerting_with_Humio_and_Opsgenie--Humio_Email_Alerts.html')">Humio Email Alerts</a></li>
+</ul>
+<li class='leaf'><a href='#' onclick="changeFrame('Automation_and_enrichment.html')">Automation and enrichment</a></li>
+<li class='leaf'><a href='#' onclick="changeFrame('Alternatives.html')">Alternatives</a></li>
+</ul>
+</div>
+</div>
+<div class='page-panel'><iframe src='' id='page_frame'></iframe></div></div><script src='res/script3.js'></script>
+
+</body>
+</html>

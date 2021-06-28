@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Sysmon</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Sysmon</h1><br/><h1>Sysmon<br /></h1><h2>• Sysmon is a sysinternals tool from Microsoft that provides additional event collection/logging (Microsoft-windows-sysmon/operational)<br />	• Logging may be noisy and the config file may need more customization<br />• Sysmon is installed as a driver and a service<br />• Installation does require a configuration file<br />	• </h2><a href="https://github.com/SwiftOnSecurity/sysmon-config">https://github.com/SwiftOnSecurity/sysmon-config</a><h2> <br />	• </h2><a href="https://github.com/olafhartong/sysmon-modular">https://github.com/olafhartong/sysmon-modular</a><h2>  <br />• Installation<br /></h2><code><h2>powershell Invoke-WebRequest -Uri &quot;https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml&quot; -OutFile &quot;sysmonconfig.xml&quot;<br />powershell Invoke-WebRequest -Uri &quot;https://live.sysinternals.com/Sysmon.exe&quot; -OutFile &quot;sysmon.exe&quot;<br />sysmon.exe -accepteula -i sysmonconfig.xml<br /></h2></code></div>
+</body>
+</html>

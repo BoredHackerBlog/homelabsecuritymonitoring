@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Process and Powershell logs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Process and Powershell logs</h1><br/><h1>Process &amp; Powershell logs</h1><br /><h2>• Process Execution and Powershell logging usually isn’t enabled by default on workstations<br />• Process execution logging will provide parent process name, new process name, and command line argument<br />• Powershell logging can provide command execution logs, script execution logs, and etc…<br /><br /></h2><h1>Enabling Process &amp; Powershell logging (run as administrator)</h1><br />• <h2>Turning on process auditing<br /></h2><code><h3>auditpol /Set /subcategory:&quot;Process Creation&quot; /Success:Enable<br />auditpol /Set /subcategory:&quot;Process Termination&quot; /Success:Enable<br />reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit\ /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1</h3></code><h2><br />• Turning on powershell logging<br /></h2><code><h3>reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging&quot; /v EnableModuleLogging /t REG_DWORD /d 1 /f<br />reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames&quot; /v * /t REG_SZ /d * /f /reg:64<br />reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging&quot; /v EnableScriptBlockLogging /t REG_DWORD /d 00000001 /f /reg:64<br />reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription&quot; /v EnableTranscripting /t REG_DWORD /d 00000001 /f /reg:64<br />reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription&quot; /v OutputDirectory /t REG_SZ /d C:\PSTranscipts /f /reg:64<br />reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription&quot; /v EnableInvocationHeader /t REG_DWORD /d 00000001 /f /reg:64<br /></h3></code></div>
+</body>
+</html>

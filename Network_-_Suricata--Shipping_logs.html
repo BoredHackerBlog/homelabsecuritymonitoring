@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Shipping logs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Shipping logs</h1><br/><h1>Shipping logs<br /></h1><br /><h2>• Logs in eve.json will be shipped to Humio<br />• Filebeat needs to be installed on the system<br />• Create a new token for suricata logs with json-for-action as the parser<br /><br /><br />Filebeat configuration needs to look something like this:<br /><br /></h2><code><h2>filebeat.inputs:<br /><br />- type: log<br /><br />  paths:<br />    - &quot;/var/log/suricata/eve.json&quot;<br /><br />output.elasticsearch:<br />  hosts: [&quot;https://cloud.humio.com:443/api/v1/ingest/elastic-bulk&quot;]<br /><br />  username: &quot;doesntmatter&quot;<br />  password: &quot;1b51c4a5-9787-4000-a830-a37f9c273dc0&quot;<br />  compression_level: 5<br />  bulk_max_size: 200<br />  worker: 5<br /></h2></code><br /></div>
+</body>
+</html>

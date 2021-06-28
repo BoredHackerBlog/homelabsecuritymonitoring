@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Installing filebeat</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Installing filebeat</h1><br/><h1>Installing filebeat</h1><br /><br /><h2>Filebeat: </h2><a href="https://www.elastic.co/downloads/beats/filebeat-oss">https://www.elastic.co/downloads/beats/filebeat-oss</a><h2><br /><br />There are various ways to install filebeat. This follows using apt-get.<br /><br /></h2><code><h2>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br />sudo apt-get install apt-transport-https<br />echo &quot;deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main&quot; | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list<br />sudo apt-get update &amp;&amp; sudo apt-get install filebeat<br /></h2></code><br /></div>
+</body>
+</html>

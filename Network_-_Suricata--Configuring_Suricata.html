@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Configuring Suricata</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Configuring Suricata</h1><br/><h1>Configuring Suricata<br /></h1><br /><h2>By default, Suricata configuration file is in /etc/suricata/ and is suricata.yaml<br /><br /></h2><code><h2>root@research-Standard-PC-i440FX-PIIX-1996:/home/research# ls -l /etc/suricata/<br />total 88<br />-rw-r--r-- 1 root root  3327 Mar  1 11:13 classification.config<br />-rw-r--r-- 1 root root  1375 Mar  1 11:13 reference.config<br />drwxr-xr-x 2 root root  4096 Jun 26 15:46 rules<br />-rw-r--r-- 1 root root 72426 Mar  2 10:27 suricata.yaml<br />-rw-r--r-- 1 root root  1644 Mar  1 11:13 threshold.config</h2></code><h2><br /><br />Edit /etc/suricata/suricata.yaml &amp; /etc/default/suricata and replace eth0 with ens19 (or monitoring interface name)<br /><br />Rules are stored in /var/lib/suricata/rules and suricata-update utility can be used to update and manage the rules and sources<br /><br />Run the following commands to enable hunting rules from here </h2><a href="https://github.com/travisbgreen/hunting-rules">https://github.com/travisbgreen/hunting-rules</a><h2>:<br /><br /></h2><code><h2>suricata-update update-sources #update rule sources<br />suricata-update list-sources #list rule sources<br />suricata-update enable-source tgreen/hunting #enable hunting rules<br />suricata-update #update rules<br /></h2></code><h2><br />Cron can be used to do automated updates<br /><br />Start Suricata<br /><br /></h2><code><h2>systemctl enable suricata<br />systemctl restart suricata<br />systemctl status suricata #Active should show running</h2></code><br /><br /></div>
+</body>
+</html>

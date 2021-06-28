@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Configuring Zeek</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Configuring Zeek</h1><br/><h1>Configuring Zeek<br /></h1><br /><h2>Log files are located under /opt/zeek/etc/<br /><br /></h2><code><h2>:/opt/zeek/etc# ls -l<br />total 16<br />-rw-rw-r-- 1 root zeek  262 Jan 28  2015 networks.cfg<br />-rw-rw-r-- 1 root zeek  651 Jan 28  2015 node.cfg<br />-rw-rw-r-- 1 root zeek 3052 Jan 28  2015 zeekctl.cfg<br />drwxr-xr-x 2 root zeek 4096 Jun 26 18:36 zkg</h2></code><h2><br /><br />Edit node.cfg and replace the interface value under [zeek].<br /><br />To output log in json format, edit /opt/zeek/share/zeek/site/local.zeek and append the following to the end of the file:<br /><br /></h2><code><h2>@load policy/tuning/json-logs.zeek</h2></code><h2><br /><br />Run zeek by running the following:<br /><br /></h2><code><h2>/opt/zeek/bin/zeekctl deploy<br />/opt/zeek/bin/zeekctl status #it should show that zeek is running</h2></code><h2><br /><br /></h2><br />More info about setting up Zeek as a service: <a href="https://www.howtoforge.com/suricata-and-zeek-ids-with-elk-on-ubuntu-20-10/">https://www.howtoforge.com/suricata-and-zeek-ids-with-elk-on-ubuntu-20-10/</a><br /><br /><a href="https://www.ericooi.com/zeekurity-zen-part-iii-how-to-send-zeek-logs-to-splunk/">https://www.ericooi.com/zeekurity-zen-part-iii-how-to-send-zeek-logs-to-splunk/</a><br /><a href="https://docs.logz.io/shipping/security-sources/zeek.html">https://docs.logz.io/shipping/security-sources/zeek.html</a></div>
+</body>
+</html>

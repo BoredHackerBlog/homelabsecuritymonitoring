@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Automation and enrichment</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Automation and enrichment</h1><br/><h1>Automation and enrichment<br /></h1><br /><h2>• Automation can be used to respond to alerts automatically and/or to provide enriched alerts<br />• Typically, the frameworks or services have two node types<br />   ◇ trigger node - starts a workflow/automation<br />   ◇ action node - nodes that actually perform actions, such as blocking an IP or doing an hash lookup<br />• Automation frameworks for generic automation and for security specific automation exist (SOAR)<br />   ◇ nodered - js based automation framework, supports visual programming, self-hosted<br />   ◇ n8n.io - js based automation framework, supports visual programming, self-hosted/saas<br />   ◇ Huginn - ruby based framework, self-hosted<br />   ◇ thehive cortex - security focused framework that works with various infosec services, self-hosted<br />   ◇ tines.io - visual programming automation framework that works with various infosec services, saas<br />   ◇ shuffler.io - visual programming automation framework that works with various infosec services, self-hosted/saas<br />   ◇ xsoar - automation framework that works with various infosec services, self-hosted<br />   ◇ zapier, automation.io - automation service that works with various other services, saas<br />   ◇ ifttt - automation service that works with various other services, saas<br /><br />Nodered example<br /><br /></h2><a href=""><img src="images/40-1.png" alt="images/40-1.png" /></a><br /><br />In this example, nodered is getting all the suricata alerts, extracting the source ip, checking graynoise, then alerting into thehive if IP is reported as malicious.<br /><br />Alert from Humio is sent to nodered via webhook<br /><a href=""><img src="images/40-2.png" alt="images/40-2.png" /></a><br /><br /><br />Greynoise is queried for the IP address<br /><a href=""><img src="images/40-3.png" alt="images/40-3.png" /></a><br /><br />Template is prepared with the context and correct key/values and a request is sent to thehive to create a new alert w/ context<br /><a href=""><img src="images/40-4.png" alt="images/40-4.png" /></a><br /></div>
+</body>
+</html>

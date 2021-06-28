@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Configuring filebeat</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Configuring filebeat</h1><br/><h1>Configuring filebeat</h1><br /><br /><h2>Filebeat configuration is located in /etc/filebeat<br /><br /></h2><code><h2>➜  ~ ls -l /etc/filebeat<br />total 444<br />-rw-r--r-- 1 root root 336144 Jun 10 15:58 fields.yml<br />-rw-r--r-- 1 root root  95419 Jun 10 15:58 filebeat.reference.yml<br />-rw------- 1 root root   9984 Jun 10 15:58 filebeat.yml<br />drwxr-xr-x 2 root root   4096 Jun 25 21:49 modules.d<br /></h2></code><h2><br /><br />/etc/filebeat/filebeat.yml needs to be edited as root and it needs to contain the following:<br />be sure to set the password to be the ingest token</h2><br /><br /><code><h2>filebeat.inputs:<br />- type: log<br />  enabled: true<br />  paths:<br />    - /home/*/.*_history<br />    - /root/.*_history<br /><br />filebeat.modules:<br />- module: system<br />  syslog:<br />    enabled: true<br />    var.paths: [&quot;/var/log/syslog&quot;]<br />  auth:<br />    enabled: true<br />    var.paths: [&quot;/var/log/auth.log&quot;]<br /><br />output.elasticsearch:<br />  hosts: [&quot;https://cloud.humio.com:443/api/v1/ingest/elastic-bulk&quot;]<br /><br />  username: &quot;doesntmatter&quot;<br />  password: &quot;6e49b4ff-babb-405e-8e0b-f83f787544bd&quot;<br />  compression_level: 5<br />  bulk_max_size: 200<br />  worker: 5<br /></h2></code><code><br /></code></div>
+</body>
+</html>

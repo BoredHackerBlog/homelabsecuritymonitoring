@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Shipping logs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Shipping logs</h1><br/><h1>Shipping logs<br /></h1><br /><h2>• Logs are in /opt/zeek/logs/current<br />• Filebeat needs to be installed on the system<br />• Create a new parser for Zeek that looks like this:<br /><br /></h2><code><h2>parseJson() | parseTimestamp(format=&quot;unixtime&quot;,field=&quot;ts&quot;)</h2></code><h2><br /><br />• Create a new token for Zeek logs and assign it the new zeek parser<br /><br />Filebeat configuration needs to look something like this:</h2><br /><br /><code><h2>filebeat.inputs:<br /><br />- type: log<br /><br />  paths:<br />    - “/opt/zeek/logs/current/*.log”<br />    # stderr.log and stdout.log are not json but they&#39;ll still be ingested, they&#39;ll just have error message associated with them<br /><br />output.elasticsearch:<br />  hosts: [&quot;https://cloud.humio.com:443/api/v1/ingest/elastic-bulk&quot;]<br /><br />  username: &quot;doesntmatter&quot;<br />  password: &quot;1b51c4a5-9787-4000-a830-a37f9c273dc0&quot;<br />  compression_level: 5<br />  bulk_max_size: 200<br />  worker: 5<br /></h2></code><br />Suricata and Zeek will likely run on one host and use one output token. Parsing both types of logs will require a custom parser. (Use @source field to differentiate between the sources then parse)<br />More info: <a href="https://docs.humio.com/docs/parsers/creating-a-parser/">https://docs.humio.com/docs/parsers/creating-a-parser/</a></div>
+</body>
+</html>

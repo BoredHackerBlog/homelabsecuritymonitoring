@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Alerting with Humio and Opsgenie</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Alerting with Humio and Opsgenie</h1><br/><h1>Alerting with Humio and Opsgenie<br /></h1><br /><h2>• Alerting in Humio starts with having an Action<br />• Alerts can be created with queries and the query results are turned into an alert, if results are found when the query is ran<br />• An alert is made up of:<br />   ◇ Name - alert name<br />   ◇ Description - alert description<br />   ◇ Query - Query that will trigger the alert if something is returned<br />   ◇ Time Window - how much data to search<br />   ◇ Actions - what to do with the alert<br />   ◇ Throttling - Throttle Period - how often to run the query<br /><br />Creation a Humio Action based on instructions from Opsgenie Integration page<br /></h2><a href=""><img src="images/39-1.png" alt="images/39-1.png" /></a><br /><br />Test Action can be used to test the alert<br /><a href=""><img src="images/39-2.png" alt="images/39-2.png" /></a><br /><br /><h2>Adding an alert to detect an nmap scan</h2><br /><br /><h2>Query:<br /><br /></h2><code><h2>@source = &quot;/opt/zeek/logs/current/ssh.log&quot;<br />| client = /Nmap/<br />| groupby([id.orig_h, id.resp_h, client])</h2></code><h2><br /><br /></h2><a href=""><img src="images/39-3.png" alt="images/39-3.png" /></a><br /><br />Adding an Alert:<br /><br /><a href=""><img src="images/39-4.png" alt="images/39-4.png" /></a><br /><br />Alert in Opsgenie:<br /><br /><a href=""><img src="images/39-5.png" alt="images/39-5.png" /></a><h2><br /><br />Description is supposed to have a link but at the time of writing this, it doesn&#39;t appear to render<br /><br /></h2><a href=""><img src="images/39-6.png" alt="images/39-6.png" /></a><br /></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Accesslog parser example</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Accesslog parser example</h1><br/><h1>Accesslog parser example</h1><br /><br /><code><h2>/(?&lt;client&gt;\S+)\s+-\s+(?&lt;userid&gt;\S+)\s+\[(?&lt;@timestamp&gt;.*)\]\s+&quot;((?&lt;method&gt;\S+)\s+(?&lt;url&gt;\S+)?\s+(?&lt;httpversion&gt;\S+)?|-)&quot;\s+(?&lt;statuscode&gt;\d+)\s+(?&lt;responsesize&gt;\S+)\s+&quot;(?&lt;referrer&gt;[^&quot;]*)&quot;\s+&quot;(?&lt;useragent&gt;[^&quot;]*)&quot;\s*(?&lt;responsetime&gt;(\d|\.)+)?/ | parseTimestamp(format=&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;, field=@timestamp)</h2></code><br /><br /><a href=""><img src="images/14-1.png" alt="images/14-1.png" /></a></div>
+</body>
+</html>
